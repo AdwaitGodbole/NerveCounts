@@ -1,0 +1,9 @@
+re process the image file to orient the tissue per the orientation markers / orientation ink drawn at necropsy
+Identify the ROI and analyze in Visiopharm
+The output TSV files are fed used to analyze
+The script generates an Excel file that has two tabs - one tab has the raw original data and the second tab has the Processed data. 
+Operations carried out by the script:
+1. shift of the nerve bundles x,y co-ordinates relative to the lumen x.y co -ordinates i.e. shift of origin operation
+2. calculation of the relative angle using the ATAN2 fx 
+3.binning the nerves using the values from #2 into 4 anatomical quadrants (=IF(AND(M2>=45,M2<135),"Quadrant 1",IF(AND(M2>=135,M2<225),"Quadrant 4",IF(AND(M2>=225,M2<315),"Quadrant 3","Quadrant 2"))))
+5. counting nerves per quadrant
